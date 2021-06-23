@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>ADD</title>
+    <script src="./js/native.js"></script>
+</head>
+
+<body onload="onLoad()">
+    <div>
+        <p>js 调用 C++的 add 方法演示</p>
+    </div>
+    <div>
+        <input id="a" placeholder="a" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+        <span>+</span>
+        <input id="b" placeholder="b" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^0-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+        <span>=</span>
+        <span id="res"></span>
+    </div>
+    <div>
+        <br>
+        <button id="btn" onclick="calculate()" disabled>计算</button>
+    </div>
+    <script type="text/javascript">
+        function onLoad() {
+            // sample()
+        }
+        Module.onRuntimeInitialized = function() {
+            btn.disabled = false
+        }
+
+        function calculate() {
+            let v1 = document.getElementById("a").value
+            let v2 = document.getElementById("b").value
+            if (v1 && v2) {
+                document.getElementById("res").innerHTML = Module._addFunc(v1, v2)
+            } else {
+                alert("请输入数字进行计算")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+    "name": "wasm",
+    "version": "1.0.0",
+    "description": "wasm",
+    "main": "server.js",
+    "dependencies": {
+        "express": "^4.17.1",
+        "socket.io": "^4.1.2",
+        "ws": "^6.0.0"
+    },
+    "devDependencies": {},
+    "author": "orange",
+    "license": "ISC"
+}

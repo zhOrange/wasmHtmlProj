@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>边缘检测</title>
+    <script async src="./js/opencv.js"></script>
+    <!-- <script src="./js/opencvdemo.js"></script> -->
+    <script async src="./js/canny.js"></script>
+
+</head>
+
+<body onload="onLoad()">
+    <p>基于OpenCV的边缘检测</p>
+    <video width="640" height="480" id="video"></video>
+    <canvas width="640" height="480" id="outputCanvas">
+    <script type="text/javascript">
+        function onLoad() {
+            openCvReady()
+        }
+
+        function openCvReady() {
+            cv['onRuntimeInitialized'] = () => {
+                // do all your work here
+                run()
+            };
+        }
+    </script>
+
+</body>
+
+</html>

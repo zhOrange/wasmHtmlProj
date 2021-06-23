@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <title>人脸检测</title>
+    <script async src="./js/opencv.js"></script>
+    <script src="./js/facedetect.js"></script>
+</head>
+
+<body onload="onLoad()">
+    <p>基于OpenCV的人脸检测</p>
+    <video width="640" height="480" id="video"></video>
+    <canvas width="640" height="480" id="outputCanvas">
+    <script type="text/javascript">
+        function onLoad() {
+            openCvReady()
+        }
+
+        function openCvReady() {
+            cv['onRuntimeInitialized'] = () => {
+                // do all your work here
+                run()
+            };
+        }
+    </script>
+
+</body>
+
+</html>
