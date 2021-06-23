@@ -6,7 +6,6 @@ const credentials = {
     cert: fs.readFileSync("./ssl/10.101.251.92.pem")
 }
 
-
 const express = require('express')
 const app = express()
 app.use(express.static('../'))
